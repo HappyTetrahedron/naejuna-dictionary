@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="HappyTetrahedron">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script type="module" src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Naejuna</title>
+  </head>
+  <body>
+  <div v-scope id="wrapper">
+    <h1> Naejuna-W&ouml;rterbuch </h1>
+    <div id="input">
+      <div class="input-row" id="input-top">
+        <p class="label">Suchwort:</p>
+        <input class="search" type="text" name="s" id="s" v-model="filter" />
+      </div>
+      <div class="input-row" id="input-bottom">
+        <p><a id="dir" @click="changeDir()">
+          <span v-if="sourceLanguage == 'deu'">Deu =&gt; Nae</span>
+          <span v-if="sourceLanguage == 'nae'">Nae =&gt; Deu</span>
+        </a></p>
+        <p><a id="refresh" :class="refreshing ? 'ongoing' : 'done'" @click="refreshData()">
+          refresh<span v-if="refreshing">ing...</span>
+        </a></p>
+      </div>
+    </div>
+    
+    <div id="results">
+      <div class="result" v-for="result in entryList">
+        <div class="stem">
+          <p v-if="result.stem" class="stem">{{ mainStem(result.stem) }}</p> 
+          <p v-if="!result.stem" class="stem">∅</p> 
+        </div>
+        <div class="rest">
+          <p>
+            <span class="word">{{ result.word }}</span>
+            <span class="type">({{ result.type }})</span>
+            <span class="gloss" v-if="result.gloss">{{ result.gloss }}</span>
+          </p>
+          <p class="definition">{{ result.definition }}</p>
+          <p class="comment" v-if="result.comment">{{ result.comment }}</p>
+        </div>
+      </div>
+  </div>
+  </body>
+</html>

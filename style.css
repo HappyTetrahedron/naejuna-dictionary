@@ -1,0 +1,160 @@
+:root {
+    --accent-color: #9cad73;
+    --background-color: #1b1b1d;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(/gallery/assets/Raleway-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(/gallery/assets/Raleway-Bold.ttf) format('truetype');
+}
+
+body::-webkit-scrollbar{
+	display: none;
+}
+
+html, body {
+    background-color: #313131;
+    font-family: 'Raleway', sans-serif;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    color: white;
+    font: sans-serif;
+    font-size: 1.0em;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    height: 32px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#input {
+    background-color: var(--accent-color);
+    padding:10px;
+    font-size:0.9em;
+    border-radius: 3px;
+    box-shadow: 0px 0px 9px 0px black;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#input-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#input-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+#wrapper {
+    margin: auto;
+    padding-top: 40px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+    height: calc(100vh - 40px);
+}
+
+#results {
+    background-color: var(--background-color);
+    padding: 1em;
+    padding-bottom: 0px;
+    height: calc(100vh - 202px - 1em);
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+div.result {
+    margin-bottom: 1em;
+    flex-direction: row;
+    display: flex;
+}
+
+input.search {
+    flex-grow: 1;
+}
+
+span.result {
+    width:100%;
+    padding:5px;
+    border:1px solid #5f5a49;
+    text-align:center;
+    align:center;
+    margin:3px 0 3px 0;
+}
+
+.word {
+    font-weight: bold;
+}
+
+.type {
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+.gloss {
+    font-stretch: expanded;
+    font-size: 0.7em;
+    margin-left: 0.1em;
+}
+
+.stem {
+    font-weight: bold;
+}
+
+.comment {
+    font-style: italic;
+    color: rgb(194, 194, 194);
+}
+
+div.stem {
+    border: 1px solid white;
+    border-radius: 3px;
+    font-weight: bold;
+    width: 50px;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+div.rest {
+    padding-left: 10px;
+}
+
+a {
+    color:white;
+    font-size:0.8em;
+}
+a:hover {
+    color:rgb(249, 228, 183);
+    text-decoration: underline;
+}
+
+a.ongoing:hover {
+    color:white;
+    text-decoration: none;
+}
+
+p {
+    margin:5px 2px 5px 2px;
+}
+
+
